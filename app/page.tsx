@@ -18,7 +18,7 @@ interface PageProps {
 }
 
 export default async function Home({ searchParams }: PageProps) {
-  const params = await searchParams
+  const params = searchParams
   const language = params.lang || 'en'
   
   let courseData: CourseData | null = null
