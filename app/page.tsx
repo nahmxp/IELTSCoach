@@ -12,13 +12,11 @@ import CheckList from '@/components/CheckList'
 import type { CourseData } from '@/types/course'
 
 interface PageProps {
-  searchParams: {
-    lang?: string
-  }
+  searchParams: Promise<{ lang?: string }>
 }
 
 export default async function Home({ searchParams }: PageProps) {
-  const params = searchParams
+  const params = await searchParams
   const language = params.lang || 'en'
   
   let courseData: CourseData | null = null
